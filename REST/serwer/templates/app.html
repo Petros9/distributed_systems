@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Holidays calendar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    />
+
+    <style>
+      .alert {
+        background: green;
+        padding: 1rem;
+        border-radius: 5px;
+        color: white;
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Holidays calendar</h3>
+    </div>
+
+    <!-- Form -->
+    <div class="container">
+      <a href="/namesday">Name days by country</a>
+      <a href="/bydate">Date for a name</a>
+      <form action="/" method="POST">
+        <label>From</label>
+        <input
+          type="date"
+          class="u-full-width"
+          name="beginning_date"
+        />
+
+        <label>To</label>
+        <input
+          type="date"
+          class="u-full-width"
+          name="ending_date"
+        />
+        <label>Operation</label>
+        <select class="u-full-width" name="operation">
+          <option value="catholic">Get catholic holidays</option>
+          <option value="english">Get english holidays</option>
+          <option value="all">Get catholic and english holidays</option>
+        </select>
+
+        <input type="submit" value="Get the results" id="calc_btn" />
+        <br />
+        <div class="alert">
+          {{ english }}
+          {{ catholic }}
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

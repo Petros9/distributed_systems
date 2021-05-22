@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Holidays calendar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    />
+
+    <style>
+      .alert {
+        background: green;
+        padding: 1rem;
+        border-radius: 5px;
+        color: white;
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Holidays calendar</h3>
+    </div>
+
+    <!-- Form -->
+    <div class="container">
+      <a href="/bydate">Date for a name</a>
+      <a href="/">Home</a>
+      <form action="/namesday" method="POST">
+        <label>Date</label>
+        <input
+          type="date"
+          class="u-full-width"
+          name="date"
+        />
+        <label>Country</label>
+        <select class="u-full-width" name="country">
+          <option value="cz">Bohemia</option>
+          <option value="sk">Slovakia</option>
+          <option value="pl">Poland</option>
+          <option value="fr">France</option>
+          <option value="hu">Hungary</option>
+          <option value="hr">Croatia</option>
+          <option value="se">Sweden</option>
+          <option value="us">USA</option>
+          <option value="at">Austria</option>
+          <option value="it">Italy</option>
+          <option value="es">Spain</option>
+          <option value="de">Germany</option>
+          <option value="dk">Denmark</option>
+          <option value="fi">Finland</option>
+          <option value="bg">Belgium</option>
+          <option value="lt">Lithuania</option>
+          <option value="ee">Estonia</option>
+          <option value="lv">Latvia</option>
+          <option value="gr">Greece</option>
+          <option value="ru">Russia</option>
+        </select>
+        <input type="submit" value="Get the results" id="calc_btn" />
+        <br />
+        <div class="alert">
+          Names which are celebrated: {{ names }}
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
